@@ -79,11 +79,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push Boulder container
-        run: docker push "ghcr.io/letsencrypt/boulder:${GITHUB_REF_NAME}-go${{ matrix.GO_VERSION }}"
+      # - name: Push Boulder container
+      #   run: docker push "ghcr.io/letsencrypt/boulder:${GITHUB_REF_NAME}-go${{ matrix.GO_VERSION }}"
 
-      - name: Push ct-test-srv container
-        run: docker push "ghcr.io/letsencrypt/ct-test-srv:${GITHUB_REF_NAME}-go${{ matrix.GO_VERSION }}"
+      # - name: Push ct-test-srv container
+      #   run: docker push "ghcr.io/letsencrypt/ct-test-srv:${GITHUB_REF_NAME}-go${{ matrix.GO_VERSION }}"
 
   publish-release:
     needs: push-release
